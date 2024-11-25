@@ -1,1 +1,57 @@
-<p>login works!</p>
+<div class="vertical-align-middle">
+  <table class="table-width-400">
+    <tr>
+      <td>
+        <mat-card>
+          <mat-card-title>
+            <mat-icon>lock</mat-icon>
+            <span>Login</span>
+          </mat-card-title>
+
+          <mat-card-content>
+            <form [formGroup]="loginForm" (ngSubmit)="aoLogar()">
+              <"p>
+                <mat-form-field>
+                  <input id="login-chave" type="text" formControlName="chave" matInput placeholder="Chave" required />
+                  <mat-error *ngIf="formularioLogin.controls['chave'].hasError('required')">
+                    Chave <strong>obrigatória</strong>
+                  </mat-error>
+                </mat-form-field>
+              </p>
+
+              <p>
+                <mat-form-field>
+                  <input id="login-senha" [type]="senhaEscondida ? 'password' : 'text'" formControlName="senha" matInput placeholder="Senha" required />
+                  <button type="button" mat-icon-button matSuffix (click)="senhaEscondida = !senhaEscondida">
+                    <mat-icon>{{senhaEscondida ? 'visibility' : 'visibility_off'}}</mat-icon>
+                  </button>
+                  <mat-error *ngIf="formularioLogin.controls['senha'].hasError('required')">
+                    Senha <strong>obrigatória</strong>
+                  </mat-error>
+                </mat-form-field>
+              </p>
+
+              <p>
+                <button type="submit" color="primary" mat-raised-button>
+                  Login
+                </button>
+              </p>
+            </form>
+          </mat-card-content>
+        </mat-card>
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>
+        <div class="text-center">
+          <p>
+            Para solicitar acesso ao sistema, envie um e-mail para <a href="mailto:suporte@teste.com.br">suporte@teste.com.br</a>
+          </p>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
