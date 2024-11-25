@@ -5,6 +5,7 @@ describe('AppComponent', () => {
   beforeEach(() => {
     fixture = new AppComponent();
   });
+
   it('add two numbers', () => {
     expect(fixture.somar(1, 4)).toBe(5);
   });
